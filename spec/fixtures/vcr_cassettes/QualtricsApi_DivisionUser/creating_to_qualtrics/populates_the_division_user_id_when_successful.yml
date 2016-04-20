@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<QUALTRICS_ORGANIZATION>.qualtrics.com/API/v3/divisions
+    body:
+      encoding: UTF-8
+      string: '{"name":"Division Test"}'
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '90'
+      Content-Length:
+      - '71'
+      Date:
+      - Wed, 20 Apr 2016 22:02:55 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"DV_3n4QKjKsUKxiBh3"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Wed, 20 Apr 2016 22:03:10 GMT
+- request:
+    method: post
+    uri: https://<QUALTRICS_ORGANIZATION>.qualtrics.com/API/v3/users
+    body:
+      encoding: UTF-8
+      string: '{"username":"division_user@test.com","password":"123456","firstName":"Division","lastName":"User","userType":"UT_3dBUKOs5wAT2mLW","divisionId":"DV_3n4QKjKsUKxiBh3","language":"en"}'
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '156'
+      Content-Length:
+      - '71'
+      Date:
+      - Wed, 20 Apr 2016 22:02:56 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"UR_6sQRjrNUc8nXbYF"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Wed, 20 Apr 2016 22:03:10 GMT
+- request:
+    method: post
+    uri: https://co1.qualtrics.com/API/v3/divisions
+    body:
+      encoding: UTF-8
+      string: '{"name":"Division Test"}'
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '153'
+      Content-Length:
+      - '71'
+      Date:
+      - Fri, 22 Apr 2016 21:57:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"DV_9Bx0OBzeP1MXmGF"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Fri, 22 Apr 2016 21:57:19 GMT
+- request:
+    method: post
+    uri: https://co1.qualtrics.com/API/v3/users
+    body:
+      encoding: UTF-8
+      string: '{"username":"division_user@test.com","password":"123456","firstName":"Division","lastName":"User","userType":"UT_3dBUKOs5wAT2mLW","divisionId":"DV_9Bx0OBzeP1MXmGF","language":"en"}'
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '161'
+      Content-Length:
+      - '71'
+      Date:
+      - Fri, 22 Apr 2016 21:57:20 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"UR_0v4AC6KJjFnv6It"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Fri, 22 Apr 2016 21:57:20 GMT
+recorded_with: VCR 3.0.1

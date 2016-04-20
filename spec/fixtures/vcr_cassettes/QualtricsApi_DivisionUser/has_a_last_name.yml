@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<QUALTRICS_ORGANIZATION>.qualtrics.com/API/v3/divisions
+    body:
+      encoding: UTF-8
+      string: '{"name":"Division Test"}'
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '97'
+      Content-Length:
+      - '71'
+      Date:
+      - Wed, 20 Apr 2016 16:46:58 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"DV_9ZSi25ioh00pXBr"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Wed, 20 Apr 2016 16:47:04 GMT
+- request:
+    method: post
+    uri: https://<QUALTRICS_ORGANIZATION>.qualtrics.com/API/v3/divisions?name=Division%20Test
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '179'
+      Date:
+      - Wed, 20 Apr 2016 16:59:01 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"httpStatus":"400 - Bad Request","error":{"errorMessage":"Invalid
+        Content-Type. expected=application/json found=application/x-www-form-urlencoded","errorCode":"RP_0.1"}}}'
+    http_version: 
+  recorded_at: Wed, 20 Apr 2016 16:59:08 GMT
+- request:
+    method: post
+    uri: https://co1.qualtrics.com/API/v3/divisions
+    body:
+      encoding: UTF-8
+      string: '{"name":"Division Test"}'
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '89'
+      Content-Length:
+      - '71'
+      Date:
+      - Fri, 22 Apr 2016 21:57:18 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"DV_6Kz9HRUXX5qPXN3"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Fri, 22 Apr 2016 21:57:18 GMT
+recorded_with: VCR 3.0.1

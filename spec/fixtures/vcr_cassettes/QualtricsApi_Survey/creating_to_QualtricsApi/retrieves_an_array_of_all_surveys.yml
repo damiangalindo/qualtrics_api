@@ -1,0 +1,124 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://co1.qualtrics.com/API/v3/surveys
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost\r\nContent-Disposition: form-data; name=\"name\"\r\n\r\nComplex
+        survey\r\n-------------RubyMultipartPost\r\nContent-Disposition: form-data;
+        name=\"contentType\"\r\n\r\napplication/vnd.qualtrics.survey.qsf\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"fileUrl\"\r\n\r\nhttp://<QUALTRICS_ORGANIZATION>-assessment-development.s3.amazonaws.com/uploads/survey/questions_file/9/Testing_one_more_time.qsf\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '451'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '2060'
+      Content-Length:
+      - '71'
+      Date:
+      - Fri, 22 Apr 2016 20:45:24 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"id":"SV_3xGGWRgoVaMnRul"},"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Fri, 22 Apr 2016 20:45:24 GMT
+- request:
+    method: get
+    uri: https://co1.qualtrics.com/API/v3/surveys
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '534'
+      Content-Length:
+      - '1575'
+      Date:
+      - Fri, 22 Apr 2016 20:45:25 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":{"elements":[{"id":"SV_02ouqlD7cHQs57v","name":"querystring_test","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-22T19:51:58Z","isActive":false},{"id":"SV_08sAouyzOHaKSjP","name":"sso_authenticator_test
+        - Juank","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-19T14:38:03Z","isActive":true},{"id":"SV_0NA5Z7rX9lvdFFX","name":"Testing
+        embedded data api","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-22T19:50:58Z","isActive":true},{"id":"SV_1YXE7I6gE6qV6y9","name":"block
+        test","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-12T19:22:57Z","isActive":false},{"id":"SV_2c1i1kwONoKgUst","name":"testing_scoring","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-04T16:44:04Z","isActive":true},{"id":"SV_2gE3Mt9wRllI57f","name":"Welltok_Recommended_Client_1
+        - Frontend","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-03-28T21:40:25Z","isActive":true},{"id":"SV_3DzZitDS7tlxbEx","name":"scoring_logic
+        -  Damian & Juank","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-05T16:44:15Z","isActive":false},{"id":"SV_3xGGWRgoVaMnRul","name":"Complex
+        survey","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-22T20:45:23Z","isActive":false},{"id":"SV_4IbHNpEHZfUt4kl","name":"Qualtrics
+        Training","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-06T20:45:09Z","isActive":true},{"id":"SV_4IrWABse6mrY9E1","name":"Testing
+        one more time","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-15T14:32:00Z","isActive":true}],"nextPage":"https://co1.qualtrics.com/API/v3/surveys?offset=10"},"meta":{"httpStatus":"200
+        - OK"}}'
+    http_version: 
+  recorded_at: Fri, 22 Apr 2016 20:45:26 GMT
+- request:
+    method: delete
+    uri: https://co1.qualtrics.com/API/v3/surveys/SV_3xGGWRgoVaMnRul
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - "<QUALTRICS_TOKEN>"
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Time:
+      - '200'
+      Content-Length:
+      - '34'
+      Date:
+      - Fri, 22 Apr 2016 20:45:26 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"httpStatus":"200 - OK"}}'
+    http_version: 
+  recorded_at: Fri, 22 Apr 2016 20:45:26 GMT
+recorded_with: VCR 3.0.1

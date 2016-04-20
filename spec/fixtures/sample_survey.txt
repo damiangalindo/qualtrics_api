@@ -1,0 +1,16 @@
+[[AdvancedFormat]]
+[[Question:MC:SingleAnswer]]
+question 1
+[[Choices]]
+a
+b
+[[Question:MC:SingleAnswer]]
+question 2
+[[Choices]]
+a
+b
+c
+[[Question:MC:SingleAnswer]]
+question 3
+[[Choices]]
+the only one
