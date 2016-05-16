@@ -22,3 +22,5 @@ tmp
 *.a
 mkmf.log
 .env
+*.zip
+.DS_Store
