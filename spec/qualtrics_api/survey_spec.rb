@@ -127,4 +127,34 @@ describe QualtricsApi::Survey, :vcr => true  do
 
   end
 
+  context 'generating response export' do
+    let(:survey_import) do
+      QualtricsApi::SurveyImport.new({
+        survey_name: 'Complex survey',
+        survey_data_url: 'http://welltok-assessment-development.s3.amazonaws.com/uploads/survey/questions_file/9/Testing_one_more_time.qsf'
+      })
+    end
+
+    let(:survey) { survey_import.survey }
+
+    before(:each) do
+      survey_import.save
+      survey
+    end
+
+    it 'generates a response export and returns the export Id' do
+      expect(survey.generate_response_export(DateTime.now - 1.day, DateTime.now)).to match /ES_.+/
+
+      survey.destroy
+    end
+
+    it 'returns a zip file with the responses in a json file' do
+      stub_request(:get, 'https://co1.qualtrics.com/API/v3/responseexports/ES_rt5a9i8p401qpp7p1ohdp6rnom/file').to_return(body: IO.binread(File.dirname(__FILE__)+'/../fixtures/response_data_ES_rt5a9i8p401qpp7p1ohdp6rnom.zip'))
+
+      expect(survey.retrieve_response_data('ES_rt5a9i8p401qpp7p1ohdp6rnom').class).to be Array
+
+      survey.destroy
+    end
+  end
+
 end

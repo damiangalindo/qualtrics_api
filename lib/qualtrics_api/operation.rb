@@ -46,6 +46,18 @@ module QualtricsApi
       end
     end
 
+    def issue_file_request
+      raise Qualtrics::UnexpectedRequestMethod if !REQUEST_METHOD_WHITELIST.include?(http_method)
+
+      query = options
+      body = nil
+      query_params = {}
+      raw_resp = nil      
+      raw_resp = connection.send(http_method, "/API/v3#{action}", query)
+
+      raw_resp.body
+    end
+
     def disable_listeners(&block)
       @listeners_disabled = true
       block.call(self)

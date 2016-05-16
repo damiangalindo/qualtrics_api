@@ -72,7 +72,7 @@ module QualtricsApi
     end
 
     def formatted_time(time)
-      time.utc.in_time_zone(QUALTRICS_POST_TIMEZONE).strftime("%Y-%m-%d %H:%M:%S")
+      time.utc.in_time_zone(QUALTRICS_POST_TIMEZONE).iso8601
     end
   end
 end

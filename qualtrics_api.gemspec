@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activemodel', '~> 4'
   s.add_runtime_dependency 'activesupport', '~> 4.2', '>= 4.2.0'
   s.add_runtime_dependency 'nokogiri'
+  s.add_runtime_dependency 'rubyzip'
 
   s.add_development_dependency 'bundler', '~> 1.6'
   s.add_development_dependency 'rake'

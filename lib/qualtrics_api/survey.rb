@@ -1,3 +1,5 @@
+require 'zip'
+
 module QualtricsApi
   class Survey < Entity
     attr_accessor :responses, :id, :survey_name,
@@ -33,6 +35,62 @@ module QualtricsApi
     def self.find(survey_id)
       response = get("/surveys/#{survey_id}")
       new(underscore_attributes(response.result))
+    end
+
+    def generate_response_export(start_date, end_date, format = 'json', options = {})
+      data = {
+        'surveyId' => id,
+        'startDate' => formatted_time(start_date),
+        'endDate' => formatted_time(end_date),
+        'format' => format
+      }.merge(options)
+
+      response = post('/responseexports', data)
+
+      if response.status == 200
+        response.result['id']
+      else
+        false
+      end
+    end    
+
+    def retrieve_response_data(response_export_id)
+      response = get_response_export(response_export_id)
+
+      if !response.blank?
+        get_file_content(response_export_id)
+      else
+        'Response is not ready yet.'
+      end
+    end
+
+    def get_file_content(response_export_id)
+      filename = "./response_data_#{response_export_id}.zip"
+      binary_file = get_file("/responseexports/#{response_export_id}/file")
+
+      json_response = []
+
+      File.open(filename,"wb") do |file| 
+        file.write binary_file
+      end        
+
+      json_response = Zip::File.open(filename) do |zip_file|
+        zip_file.collect { |entry| JSON.parse(entry.get_input_stream.read) }
+      end
+
+      File.delete(filename)
+
+      json_response[0]['responses']
+    end
+
+    def get_response_export(response_export_id)
+      response = get("/responseexports/#{response_export_id}")
+
+      if response.status == 200        
+        response.result['file'] ? response.result['file'] : ''
+      else
+        false
+      end
     end
 
     def self.attribute_map
@@ -85,6 +143,10 @@ module QualtricsApi
         @survey_status = false
         true
       end
+    end
+
+    def get_file(request)
+      QualtricsApi::Operation.new(:get, request, nil).issue_file_request
     end
   end
 end
