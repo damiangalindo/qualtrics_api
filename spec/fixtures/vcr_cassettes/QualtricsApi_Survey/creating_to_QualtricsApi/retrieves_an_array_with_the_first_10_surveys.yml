@@ -30,18 +30,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Request-Time:
-      - '2060'
+      - '2071'
       Content-Length:
       - '71'
       Date:
-      - Fri, 22 Apr 2016 20:45:24 GMT
+      - Tue, 17 May 2016 16:21:26 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"result":{"id":"SV_3xGGWRgoVaMnRul"},"meta":{"httpStatus":"200 - OK"}}'
+      string: '{"result":{"id":"SV_6RMze9tY3byJVLn"},"meta":{"httpStatus":"200 - OK"}}'
     http_version: 
-  recorded_at: Fri, 22 Apr 2016 20:45:24 GMT
+  recorded_at: Tue, 17 May 2016 16:21:27 GMT
 - request:
     method: get
     uri: https://co1.qualtrics.com/API/v3/surveys
@@ -65,30 +65,23 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Request-Time:
-      - '534'
+      - '551'
       Content-Length:
-      - '1575'
+      - '507'
       Date:
-      - Fri, 22 Apr 2016 20:45:25 GMT
+      - Tue, 17 May 2016 16:21:28 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"result":{"elements":[{"id":"SV_02ouqlD7cHQs57v","name":"querystring_test","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-22T19:51:58Z","isActive":false},{"id":"SV_08sAouyzOHaKSjP","name":"sso_authenticator_test
-        - Juank","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-19T14:38:03Z","isActive":true},{"id":"SV_0NA5Z7rX9lvdFFX","name":"Testing
-        embedded data api","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-22T19:50:58Z","isActive":true},{"id":"SV_1YXE7I6gE6qV6y9","name":"block
-        test","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-12T19:22:57Z","isActive":false},{"id":"SV_2c1i1kwONoKgUst","name":"testing_scoring","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-04T16:44:04Z","isActive":true},{"id":"SV_2gE3Mt9wRllI57f","name":"Welltok_Recommended_Client_1
-        - Frontend","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-03-28T21:40:25Z","isActive":true},{"id":"SV_3DzZitDS7tlxbEx","name":"scoring_logic
-        -  Damian & Juank","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-05T16:44:15Z","isActive":false},{"id":"SV_3xGGWRgoVaMnRul","name":"Complex
-        survey","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-22T20:45:23Z","isActive":false},{"id":"SV_4IbHNpEHZfUt4kl","name":"Qualtrics
-        Training","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-06T20:45:09Z","isActive":true},{"id":"SV_4IrWABse6mrY9E1","name":"Testing
-        one more time","ownerId":"UR_6mMOll6VM5c3mex","lastModified":"2016-04-15T14:32:00Z","isActive":true}],"nextPage":"https://co1.qualtrics.com/API/v3/surveys?offset=10"},"meta":{"httpStatus":"200
+      string: '{"result":{"elements":[{"id":"SV_6RMze9tY3byJVLn","name":"Complex survey","ownerId":"UR_8IHOX9A7ekc4dgN","lastModified":"2016-05-17T16:21:27Z","isActive":false},{"id":"SV_bpyi1MsTPsHNgu9","name":"rails_test_one_question","ownerId":"UR_8IHOX9A7ekc4dgN","lastModified":"2016-04-25T23:03:30Z","isActive":true},{"id":"SV_dnaZ8YOozI31hQN","name":"Testing
+        users permissions","ownerId":"UR_8IHOX9A7ekc4dgN","lastModified":"2016-04-07T16:07:01Z","isActive":false}],"nextPage":null},"meta":{"httpStatus":"200
         - OK"}}'
     http_version: 
-  recorded_at: Fri, 22 Apr 2016 20:45:26 GMT
+  recorded_at: Tue, 17 May 2016 16:21:28 GMT
 - request:
     method: delete
-    uri: https://co1.qualtrics.com/API/v3/surveys/SV_3xGGWRgoVaMnRul
+    uri: https://co1.qualtrics.com/API/v3/surveys/SV_6RMze9tY3byJVLn
     body:
       encoding: US-ASCII
       string: ''
@@ -109,16 +102,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Request-Time:
-      - '200'
+      - '193'
       Content-Length:
       - '34'
       Date:
-      - Fri, 22 Apr 2016 20:45:26 GMT
+      - Tue, 17 May 2016 16:21:29 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"meta":{"httpStatus":"200 - OK"}}'
     http_version: 
-  recorded_at: Fri, 22 Apr 2016 20:45:26 GMT
+  recorded_at: Tue, 17 May 2016 16:21:29 GMT
 recorded_with: VCR 3.0.1

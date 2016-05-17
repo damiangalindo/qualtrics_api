@@ -8,6 +8,9 @@ module QualtricsApi
                   :creator_id, :last_modified, :last_activated,
                   :status, :questions, :embedded_data, :responses_count
 
+    @next_page = ''
+    @survey_result = []
+
     def initialize(options={})
       @responses = options[:responses]
       @id = options[:id]
@@ -25,10 +28,24 @@ module QualtricsApi
       @responses_count = options[:responses_count]
     end
 
-    def self.all
-      response = get('/surveys')
-      response.result['elements'].map do |survey|
+    def self.paginated_response      
+      get_surveys('/surveys')
+    end
+
+    def self.get_surveys(next_page)
+      response = get(next_page)
+      @survey_result = response.result['elements'].map do |survey|
         new(underscore_attributes(survey))
+      end      
+      @next_page = response.result['nextPage'] ? response.result['nextPage'].split('?')[1] : nil
+      @survey_result
+    end
+
+    def self.next_page
+      if @next_page
+        get_surveys("/surveys?#{@next_page}")
+      else
+        []
       end
     end
 

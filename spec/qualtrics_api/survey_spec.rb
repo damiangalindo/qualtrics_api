@@ -94,10 +94,10 @@ describe QualtricsApi::Survey, :vcr => true  do
       survey.destroy
     end
 
-    it 'retrieves an array of all surveys' do
+    it 'retrieves an array with the first 10 surveys' do
       survey_import.save
 
-      expect(QualtricsApi::Survey.all.map{|p| p.id}).to include(survey.id)
+      expect(QualtricsApi::Survey.paginated_response.map{|p| p.id}).to include(survey.id)
       survey.destroy
     end
 
