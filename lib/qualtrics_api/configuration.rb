@@ -1,6 +1,6 @@
 module QualtricsApi
   class Configuration
-    attr_accessor :version, :token, :endpoint, :organization
+    attr_accessor :version, :token, :endpoint, :organization, :default_library_id
     DEFAULT_VERSION = '3.0'
     DEFAULT_ENDPOINT = 'https://co1.qualtrics.com/API/v3'
 

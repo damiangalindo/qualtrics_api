@@ -9,6 +9,9 @@ require "qualtrics_api/survey"
 require "qualtrics_api/survey_import"
 require "qualtrics_api/division"
 require "qualtrics_api/division_user"
+require "qualtrics_api/mailing_list"
+require "qualtrics_api/contact_import"
+require "qualtrics_api/contact"
 
 module QualtricsApi
   def self.configure(&block)

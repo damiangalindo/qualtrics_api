@@ -15,7 +15,7 @@ module QualtricsApi
     end
 
     def issue_request
-      raise Qualtrics::UnexpectedRequestMethod if !REQUEST_METHOD_WHITELIST.include?(http_method)
+      raise QualtricsApi::UnexpectedRequestMethod if !REQUEST_METHOD_WHITELIST.include?(http_method)
 
       query = options
       body = nil
@@ -37,6 +37,8 @@ module QualtricsApi
         end        
       end
 
+      puts raw_resp.inspect
+
       QualtricsApi::Response.new(raw_resp).tap do |response|
         if !@listeners_disabled
           @@listeners.each do |listener|
@@ -47,7 +49,7 @@ module QualtricsApi
     end
 
     def issue_file_request
-      raise Qualtrics::UnexpectedRequestMethod if !REQUEST_METHOD_WHITELIST.include?(http_method)
+      raise QualtricsApi::UnexpectedRequestMethod if !REQUEST_METHOD_WHITELIST.include?(http_method)
 
       query = options
       body = nil

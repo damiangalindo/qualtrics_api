@@ -22,7 +22,7 @@ module QualtricsApi
       @survey_creation_date = options[:survey_creation_date] || options[:creation_date]
       @creator_id = options[:creator_id] || options[:owner_id]
       @last_modified = options[:last_modified] || options[:last_modified_date]
-      @last_activated = options[:last_activated]      
+      @last_activated = options[:last_activated]
       @questions = options[:questions]
       @embedded_data = options[:embedded_data]
       @responses_count = options[:responses_count]
